@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(0deg,#101010,#323232);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  height: 100vh;
+
+}
+
+.navbar{
+  display: flex;
+  list-style: none;
+  width: 100%;
+  box-shadow: 0px -5px 28px 0px darkcyan;
+}
+
+.logo{
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin: 5vh 0 3vh 2vw;
+  text-shadow: -2px 1px 15px darkturquoise, 1px -1px 10px darkturquoise;
+  text-decoration: overline;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 34em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+#new-task {
+  position: relative;
+  background-color: #1f1d1d;
+  padding: 1.8em 1.25em;
+  border-radius: 0.3em;
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+  gap: 1em;
+  box-shadow: 5px 5px 12px -6px darkturquoise;
+}
+#new-task input {
+  background-color: #434343;
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  border: none;
+  border-bottom: 2px solid #d1d3d4;
+  padding: 0.8em 0.5em;
+  color: #ffffff;
+  font-weight: 500;
+}
+#new-task input:focus {
+  outline: none;
+  border-color: darkturquoise;
+}
+#new-task button {  
+  height: 8vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+  background: none;
+  color: black;
+  border-radius: 0.3em;
+  font-weight: 100;
+  border: 1px solid cyan;
+  text-shadow: -2px 1px 0px darkturquoise, 0px 0px 20px darkturquoise;
+
+  cursor: pointer;
+}
+
+#new-task button:hover {  
+background-color: darkturquoise;
+color: black;
+text-shadow: -1px 1px 5px black;
+box-shadow: -1px 1px 8px 2px darkcyan;
+cursor: pointer;
+}
+
+#tasks {
+  background-color: #121212;
+  position: relative;
+  padding: 1.8em 1.25em;
+  margin-top: 3.8em;
+  width: 100%;
+  box-shadow: 0 1.25em 1.8em rgba(1, 24, 48, 0.15);
+  border-radius: 0.6em;
+}
+.task {
+  background-color: #121212;
+  padding: 0.3em 0.6em;
+  margin-top: 0.6em;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #d1d3d4;
+  cursor: pointer;
+}
+.task span {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+.task button {
+  color: #ffffff;
+  padding: 0.8em 0;
+  width: 2.8em;
+  border-radius: 0.3em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.delete {
+  background-color: #fb3b3b;
+}
+.edit {
+  background-color: #0b87ff;
+  margin-left: auto;
+  margin-right: 3em;
+}
+.completed {
+  text-decoration: line-through;
+}
