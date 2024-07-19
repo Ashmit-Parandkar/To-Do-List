@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="logo">TASK BUDDY</h1>
+        <br>
+        <h3 style="color: white; font-size: 30px; margin-bottom: 5px;">LOGIN</h3>
+        <br>
+        <hr width="450px">
+        <form class="form" method="POST" action="/api/v1/users/login">
+            <p class="text">What's your email</p>
+            <input class="input-box" type="text" name="email" id="emailInput" placeholder="Enter your email" />
+            <p class="text">Enter your password</p>
+            <input class="input-box" type="password" name="password" id="passwordInput" placeholder="Enter your password">
+            <br>
+            <button class="submit" id="loginButton" type="submit"> LOGIN </button>
+        </form>
+    </div>
+
+    <!-- <script type="text/javascript" src="/js/login.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK BUDDY</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="form-container">
+        <nav class="navbar">
+            <li><h1 class="logo">TASK BUDDY</h1></li>
+            <li id="profile-button"><a href="/api/v1/users/myProfile" style="text-decoration: none; color: darkturquoise;">PROFILE</a></li>
+            <li id="logout-button"><a href="/api/v1/users/logout" style="text-decoration: none; color: darkturquoise;">LOGOUT</a></li>
+        </nav>
+        <div class="task-container">
+            <form class="task-box" method="POST" action="/api/v1/tasks/new">
+                <input type="text" name="title" id="task-title" placeholder="TITLE"/>
+                <br>
+                <textarea name="description" id="task-desc" cols="30" rows="5" placeholder="DESCRIPTION"></textarea>
+                <br>
+                <button id="task-button" type="submit">ADD TASK</button>
+            </form>
+        </div>
+        <br> 
+        <div class="all-tasks">
+            
+            <% for (var i=0; i<locals.tasks.length;i++) { %>
+                <div class="one-task">
+                    <div class="title-description">
+                        <div class="title">
+                            <%= locals.tasks[i].title %>
+                        </div>
+                        <br/>  
+                        <div class="description">
+                            <%= locals.tasks[i].description %>
+                        </div>
+                        <br/>  
+                        <br/> 
+                    </div>
+                    <form id="update-delete">
+                        <input id="updatebtn" type="checkbox" value="Completed" onclick="update_task(`<%=locals.tasks[i]._id%>`)"></input>
+                        <input id="deletebtn" type="button" value="Delete" onclick="delete_task(`<%=locals.tasks[i]._id%>`)"></input>
+                    </form>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <script>
+        update_task = (task_id) =>{
+            console.log(task_id)
+        }
+
+        delete_task = async(task_id) =>{
+            // console.log(task_id)
+            var url = "/api/v1/tasks/" + task_id;
+            // Send the DELETE request
+            var xhr = await new XMLHttpRequest();
+            await xhr.open("DELETE", url, true);
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 204) {
+                // Request was successful
+                window.location.href = window.location.href;
+            }
+            else{
+                console.log('Ready state:', xhr.readyState);
+                console.log('Status:', xhr.status);
+            }
+            };
+            await xhr.send();
+        }
+    </script>
+</body>
+</html>

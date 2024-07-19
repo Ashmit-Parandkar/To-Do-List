@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="logo">TASK BUDDY</h1>
+        <br>
+        <h3 style="color: white; font-size: 30px;">Sign up for free to start managing your tasks efficiently.</h3>
+        <br>
+        <hr width="450px" style="margin-bottom: 40px;">
+        <form class="form" method="POST" action="/api/v1/users/register">
+            <p class="text">What should we call you?</p>
+            <input class="input-box" type="text" name="name" id="nameInput" style="margin-bottom: -10px;" placeholder="Enter a profile name" />
+            <p class="text" style=" font-size: small;margin: 20px 0 30px 0;">This name appears on your profile</p>
+            <p class="text">What's your email</p>
+            <input class="input-box" type="text" name="email" id="emailInput" placeholder="Enter your email" />
+            <p class="text">Create a password</p>
+            <input class="input-box" type="password" name="password" id="passwordInput" placeholder="Create a password">
+            <br>
+            <button class="submit" id="registerButton" type="submit"> REGISTER </button>
+        </form>
+    </div>
+
+    <!-- <script type="text/javascript" src="/js/register.js"></script> -->
+</body>
+</html>
